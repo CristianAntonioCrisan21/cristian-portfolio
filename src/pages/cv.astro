@@ -1,0 +1,95 @@
+---
+import cv from "../data/cv.json";
+const title = `CV — ${cv.name}`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <style>
+      :root { color-scheme: light; }
+      body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #111827; background: #f9fafb; }
+      .page { max-width: 800px; margin: 2rem auto; padding: 2rem; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+      header { display: flex; flex-direction: column; gap: 4px; margin-bottom: 1.5rem; }
+      h1 { font-size: 1.75rem; margin: 0; }
+      .role { color: #374151; margin: 0; }
+      .meta { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.95rem; color: #4b5563; }
+      .meta a { color: #2563eb; text-decoration: none; }
+      .meta a:hover { text-decoration: underline; }
+      .section { margin-top: 1.75rem; }
+      .section h2 { font-size: 1.1rem; letter-spacing: .02em; color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: .4rem; margin: 0 0 .75rem; }
+      .item { margin: 1rem 0; }
+      .item h3 { margin: 0; font-size: 1rem; }
+      .where { color: #4b5563; }
+      .dates { color: #6b7280; font-size: .95rem; }
+      .item ul { margin: .35rem 0 0 1.25rem; }
+      .item li { margin: .2rem 0; }
+      li { margin: 2px 0; }
+      .skills { display: flex; gap: 6px; flex-wrap: wrap; }
+      .chip { border: 1px solid #E5E7EB; border-radius: 8px; padding: 2px 8px; font-size: 12px; background: #fff; }
+      @media print {
+        body { background: #fff; }
+        .page { box-shadow: none; margin: 0; border-radius: 0; }
+        a { color: inherit; text-decoration: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>{cv.name}</h1>
+        <p class="role">{cv.role}</p>
+        <div class="meta">
+          <span>{cv.location}</span>
+          <a href={`mailto:${cv.email}`}>{cv.email}</a>
+          {cv.links.github && <a href={cv.links.github}>GitHub</a>}
+          {cv.links.linkedin && <a href={cv.links.linkedin}>LinkedIn</a>}
+          {cv.links.website && <a href={cv.links.website}>Web</a>}
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Resumen</h2>
+        <p>{cv.summary}</p>
+      </section>
+
+      <section class="section">
+        <h2>Experiencia / Proyectos</h2>
+        {cv.timeline.filter((t) => t.type !== 'education').map((item) => (
+          <div class="item">
+            <h3>{item.title}</h3>
+            {item.org && <div class="where">{item.org}</div>}
+            <div class="dates">{item.dates}</div>
+            <ul>
+              {item.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <section class="section">
+        <h2>Educación</h2>
+        {cv.timeline.filter((t) => t.type === 'education').map((item) => (
+          <div class="item">
+            <h3>{item.title}</h3>
+            {item.org && <div class="where">{item.org}</div>}
+            <div class="dates">{item.dates}</div>
+            <ul>
+              {item.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <section class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+          {cv.skills.map((s) => <span class="chip">{s}</span>)}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

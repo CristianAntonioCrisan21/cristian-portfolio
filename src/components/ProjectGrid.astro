@@ -1,0 +1,32 @@
+---
+import { getUserRepos } from "../utils/github";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props { githubUser: string }
+const { githubUser } = Astro.props as Props;
+const repos = await getUserRepos(githubUser);
+---
+<section id="projects" class="section">
+  <h2 class="heading mb-8">Proyectos</h2>
+
+  {repos.length === 0 ? (
+    <p class="opacity-80">Aún no hay repos públicos. Pronto añadiré proyectos ✌️</p>
+  ) : (
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {repos.map((r) => (
+        <ProjectCard
+          name={r.name}
+          description={r.description}
+          html_url={r.html_url}
+          homepage={r.homepage}
+          stars={r.stargazers_count}
+          language={r.language}
+        />
+      ))}
+    </div>
+  )}
+
+  <div class="mt-6">
+    <a class="button" href={`https://github.com/${githubUser}`} target="_blank" rel="noreferrer">Ver GitHub</a>
+  </div>
+</section>

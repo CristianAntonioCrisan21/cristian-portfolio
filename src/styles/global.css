@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS personalizadas */
+:root {
+  color-scheme: light dark;
+  --gradient-brand: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Utilidades base */
+.container { 
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl; 
+}
+
+.section { 
+  @apply py-16 md:py-24; 
+}
+
+.heading { 
+  @apply text-3xl md:text-5xl font-bold tracking-tight;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Componentes mejorados */
+.card {
+  @apply p-6 rounded-2xl border border-white/10 backdrop-blur-sm;
+  background: var(--gradient-subtle);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  @apply transform -translate-y-1;
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: var(--shadow-card-hover), var(--shadow-glow);
+}
+
+.button {
+  @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 inline-flex items-center gap-2;
+  @apply hover:transform hover:-translate-y-0.5 active:translate-y-0;
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-card);
+}
+
+.button:hover {
+  box-shadow: var(--shadow-card-hover), var(--shadow-glow);
+}
+
+.button.secondary {
+  @apply bg-white/10 text-white border border-white/20;
+  background: var(--gradient-subtle);
+}
+
+.button.secondary:hover {
+  @apply bg-white/20 border-white/30;
+}
+
+.subtle {
+  @apply text-sm text-zinc-400;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Efectos de glassmorphism */
+.glass {
+  @apply backdrop-blur-md border border-white/10;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Estilos de navegación */
+.nav-link {
+  @apply text-zinc-300 transition-colors relative;
+}
+
+.nav-link:hover {
+  color: #10B981;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+

@@ -1,0 +1,61 @@
+---
+const name = "Cristian Antonio Crisan";
+const role = "Full Stack Developer";
+const pitch = "Construyo interfaces rápidas y limpias.";
+---
+
+<section id="hero" class="section flex flex-col items-center text-center gap-8 relative overflow-hidden">
+  <!-- Efectos de fondo -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-brand/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  </div>
+
+  <!-- Avatar con efectos mejorados -->
+  <div class="relative animate-fade-in-up">
+    <div class="absolute inset-0 bg-gradient-to-r from-brand to-emerald-400 rounded-full blur-md opacity-20 animate-pulse"></div>
+    <img src="/Perfil.jpeg" alt="Foto de Cristian"
+         class="relative h-36 w-36 rounded-full object-cover ring-2 ring-brand/30 ring-offset-4 ring-offset-zinc-950 animate-float"
+         loading="lazy" />
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="animate-fade-in-up delay-200">
+    <h1 class="heading mb-4">{name}</h1>
+    <div class="flex items-center justify-center gap-2 mb-4">
+      <div class="w-2 h-2 bg-brand rounded-full animate-pulse"></div>
+      <p class="text-xl text-zinc-300 font-medium">{role}</p>
+      <div class="w-2 h-2 bg-brand rounded-full animate-pulse"></div>
+    </div>
+    <p class="max-w-2xl text-lg text-zinc-400 leading-relaxed">{pitch}</p>
+  </div>
+
+  <!-- Botones mejorados -->
+  <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+    <a href="#projects" class="button secondary group">
+      <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+      Ver proyectos
+    </a>
+    <a href="/cv" class="button group">
+      <svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      </svg>
+      Descargar CV
+    </a>
+  </div>
+
+  <!-- Indicador de scroll -->
+  <div class="absolute bottom-8 animate-bounce">
+    <svg class="w-6 h-6 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-1000 { animation-delay: 1s; }
+</style>

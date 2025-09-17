@@ -1,0 +1,43 @@
+{
+  "name": "Cristian Antonio Crisan",
+  "role": "Full Stack Developer",
+  "location": "Lleida, España",
+  "email": "cricrisan21@gmail.com",
+  "links": {
+    "github": "https://github.com/CristianAntonioCrisan21",
+    "linkedin": "www.linkedin.com/in/cristian-antonio-crisan-769560285",
+    "website": ""
+  },
+  "summary": "Desarrollador orientado a producto. Construyo interfaces rápidas y minimalistas, cuidando rendimiento y DX.",
+  "skills": [
+    "React",
+    "TypeScript",
+    "Astro",
+    "Java",
+    "JavaScript",
+    "Tailwind",
+    "Git"
+  ],
+  "timeline": [
+    {
+      "type": "project",
+      "title": "ProfileHub",
+      "org": "Side project",
+      "dates": "2025",
+      "bullets": [
+        "App de escritorio para lanzar/organizar perfiles de trabajo (apps/webs).",
+        "Stack: React · Electron · Vite."
+      ]
+    },
+    {
+      "type": "education",
+      "title": "CFGS Desarrollo de Aplicaciones Multiplataforma",
+      "org": "",
+      "dates": "2023 – 2025",
+      "bullets": [
+        "Fundamentos de programación, Java, BD y móvil.",
+        "Proyectos prácticos con foco en UI y rendimiento."
+      ]
+    }
+  ]
+}

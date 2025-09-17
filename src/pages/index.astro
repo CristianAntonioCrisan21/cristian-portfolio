@@ -1,16 +1,34 @@
 ---
-
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import CvTimeline from "../components/CvTimeline.astro";
+const { title = "Cristian Crisan — Portfolio", description = "Desarrollador Frontend · React · Electron · Astro" } = Astro.props;
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen bg-zinc-950 text-zinc-100">
+    <Header />
+    <main class="pt-20">
+      <div class="container">
+        <Hero />
+        <About />
+        <!-- <FeaturedProjects /> -->
+        <ProjectGrid githubUser="CristianAntonioCrisan21" />
+        <CvTimeline />
+      </div>
+    </main>
+  </body>
 </html>

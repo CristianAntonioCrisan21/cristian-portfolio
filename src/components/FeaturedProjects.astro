@@ -1,0 +1,38 @@
+---
+// Lista manual de proyectos destacados
+const featured = [
+{
+name: "ProfileHub",
+description: "App de escritorio para gestionar perfiles de trading/productividad (React + Electron).",
+repo: "https://github.com/CristianAntonioCrisan21/ProfileHub-CristianAntonioCrisan",
+demo: null,
+stack: ["React", "Electron", "TypeScript"],
+},
+];
+---
+<section id="featured" class="section">
+<h2 class="heading mb-8">Destacados</h2>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+{featured.map((p) => (
+<article class="card flex flex-col gap-3">
+<header>
+<h3 class="text-lg font-semibold">
+<a href={p.repo} target="_blank" rel="noreferrer" class="hover:underline">{p.name}</a>
+</h3>
+<p class="mt-1 opacity-80">{p.description}</p>
+</header>
+<div class="mt-auto flex gap-2 flex-wrap subtle">
+{p.stack.map((s) => (
+<span class="px-2 py-0.5 rounded bg-white/10 text-xs">{s}</span>
+))}
+</div>
+<div class="flex gap-2 pt-2">
+<a class="button bg-white/10" href={p.repo} target="_blank" rel="noreferrer">Repo</a>
+{p.demo && (
+<a class="button" href={p.demo} target="_blank" rel="noreferrer">Demo</a>
+)}
+</div>
+</article>
+))}
+</div>
+</section>
