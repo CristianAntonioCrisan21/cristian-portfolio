@@ -179,8 +179,8 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 **Cristian Crisan**
 - GitHub: [@CristianAntonioCrisan21](https://github.com/CristianAntonioCrisan21)
-- Portfolio: [Tu URL de portfolio]
-- Email: [tu-email@ejemplo.com]
+- Portfolio: [https://cristian-portfolio-blond.vercel.app]
+- Email: [cricrisan21@gmail.com]
 
 ---
 
