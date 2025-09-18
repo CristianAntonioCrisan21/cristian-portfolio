@@ -20,6 +20,32 @@
   ],
   "timeline": [
     {
+      "type": "experience",
+      "title": "Desarrollador Web (Prácticas)",
+      "org": "Aigües Segarra Garrigues",
+      "location": "Tàrrega, España",
+      "dates": "Oct 2024 – Feb 2025",
+      "bullets": [
+        "Migré la interfaz web interna de empleados a React, mejorando el rendimiento y la experiencia de usuario.",
+        "Implementé componentes reutilizables y modulares para aumentar la escalabilidad y reducir la duplicación de código.",
+        "Optimizé la carga inicial y la navegación interna, logrando tiempos de respuesta más rápidos.",
+        "Colaboré con el equipo de TI en la integración de la nueva interfaz con los servicios internos de la empresa.",
+        "Versioné el proyecto con Git/GitHub, trabajando con ramas y revisiones de código."
+      ]
+    },
+    {
+      "type": "experience",
+      "title": "Técnico de Hardware",
+      "org": "BonÀrea",
+      "location": "Guissona, España",
+      "dates": "May 2023 – Jul 2023",
+      "bullets": [
+        "Realicé mantenimiento preventivo y correctivo de ordenadores y servidores.",
+        "Utilicé Excel y herramientas ofimáticas para el registro y seguimiento de incidencias.",
+        "Llevé a cabo montaje y configuración de ordenadores para el entorno corporativo."
+      ]
+    },
+    {
       "type": "project",
       "title": "ProfileHub",
       "org": "Side project",

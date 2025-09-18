@@ -61,7 +61,7 @@ const title = `CV — ${cv.name}`;
         {cv.timeline.filter((t) => t.type !== 'education').map((item) => (
           <div class="item">
             <h3>{item.title}</h3>
-            {item.org && <div class="where">{item.org}</div>}
+            {item.org && <div class="where">{item.org}{item.location && ` — ${item.location}`}</div>}
             <div class="dates">{item.dates}</div>
             <ul>
               {item.bullets.map((b) => <li>{b}</li>)}
